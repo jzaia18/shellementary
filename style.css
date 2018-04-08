@@ -1,10 +1,31 @@
 body {
+    background-image: url("https://thumbs.dreamstime.com/b/internet-technology-programming-seamless-background-linear-icons-set-html-php-code-pattern-line-style-74589214.jpg");
     background-color: #F4F4F4;
     color: #373737;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
+div.top {
+    background-color: #F4F4F4;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.content {
+    background-color: #F4F4F4;
+    margin: auto;
+    width: 75%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 .logo {
+    display: block;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -17,4 +38,14 @@ h3 {
 
 p {
     font-size: 20px;
+}
+
+div.footer {
+    text-align: center;
+}
+
+pre {
+    background-color: #5F6063;
+    color: white;
+    font-size: 15px;
 }
