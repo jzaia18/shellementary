@@ -1,0 +1,20 @@
+body {
+    background-color: #F4F4F4;
+    color: #373737;
+}
+
+.logo {
+    height: 150px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
