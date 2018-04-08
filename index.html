@@ -54,7 +54,7 @@
     </code></pre>
 
     <p>
-      At heart, that's essentially all that it is! You feed bash a bunch of stuff to do, and then it does it! You can have your commands be anything, including, ls, cd, mv, rm, cp, mkdir, touch, or git commit -m "This commit doesn't work." But to start, we will use echo.
+      At heart, that's essentially all that it is! You feed bash a bunch of stuff to do, and then it does it! You can have your commands be anything, including ls, cd, mv, rm, cp, mkdir, touch, or git commit -m "This commit doesn't work." But to start, we will use echo.
     </p>
     <p>
       Echo does what you think it does. You give it an argument, and bash reads it back to you. While it seems useless using it directly in the terminal, echo is essentially the print statment of Shell. So to write a "Hello World" program, it's quite simple!
@@ -64,6 +64,104 @@
 	#! /bin/bash
 	echo "Hello World!"
     </code></pre>
+
+    <p>
+      Note that we used echo "Hello World!" instead of echo Hello World!, even though both of those would "work." However, it's best to stick with the quotes in order to make sure you're giving one argument instead of multiple. More on this later.
+    </p>
+
+    <p>
+    So let's run this file! Simply go into the terminal and run your file as an executable like so (for the sake of example we called our file script.sh):  
+    </p>
+
+    <pre><code>
+	$ ./script.sh
+    </code></pre>
+    
+    <p>
+      ...and permission's been denied. That's because you haven't given the file execute permissions, which can be done by doing:
+    </p>
+
+    <pre><code>
+	$ chmod +x script.sh
+    </code></pre>
+
+    <p>
+      Try running the file again, and it works! But let's personalize this a tad, eh? How about we asked the user for their name, read it, and then greeted them personally? To do this we need to use variables and the read function. First we'll ask the user for their name by printing our query:
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+	echo "What is your name?"
+    </code></pre>
+
+    <p>
+      Then we have to ask them for input and save it somewhere. This is where read comes in. To do this we'll create a variable and "read" the user's input into it, like so:
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+	echo "What is your name?"
+	read NAME
+    </code></pre>
+
+    <p>
+      What this does is it blocks the rest of the script until the user enters some data, then saves that data into a variable that we just created called NAME. Fantastic! Now in order to refer to NAME when greeting them, we simply do:
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+	echo "What is your name?"
+	read NAME
+	echo "Hello $NAME!"
+    </code></pre>
+
+    <p>
+      To refer to variables we simply add a $ in front of their name, and their value is inserted in its place to be used. Run this code and watch the magic happen! 
+    </p>
+
+    <p>
+      Now for something a little more advanced. Let's create a file with the name of the user! So for starters, let's add this to our code:
+    </p>
+
+    <pre><code>
+	echo "Creating file with your name..."
+	touch $NAME_file.txt
+    </code></pre>
+
+    <p>
+      This should create a file with the user's name. So for example, if the user were to input "Bob" the file created should be called Bob_file.txt. Except running this doesn't seem to create such a file... And the reason for that is that bash doesn't know where your variable name ends and the rest of the filename begins, so it looked for a variable called $NAME_file, which has no value in it, so nothing was created. To fix this, we can denote our variable names with curly braces.
+    </p>
+
+    <pre><code>
+	echo "Creating file with your name..."
+	touch ${NAME}_file.txt
+    </code></pre>
+
+    <p>
+      And running this with simple inputs should work! But what if the user types in something like "John Doe" where a space is involved? Run it and see! What you get is one file named "John" and one named "Doe_file.txt." Why does this happen?
+    </p>
+
+    <p>
+      The answer lies in the way the values are substituted. The way we have it right now results in the following substitution:
+    </p>
+
+    <pre><code>
+	echo "Creating file with your name..."
+	touch John Doe_file.txt
+    </code></pre>
+
+    <p>
+      This is read as two arguments! What we've done is tell bash "Okay, make a file called Joe, and make another called Doe_file.txt as we have denoted with the space." In order to make this one argument and not two, we just have to put the whole thing in quotes, hence why we said it's better to stay in the habit to avoid multiple argument quirks like we just demonstrated.
+    </p>
+
+    <pre><code>
+	echo "Creating file with your name..."
+	touch "${NAME}_file.txt"
+    </code></pre>
+
+    <p>
+...And that's all for now! We've just barely scratched the surface of Shell, (we haven't even gotten into loops and if statements yet!) but there are plenty of online resources to sink your teeth into! We hope this was a good way to get a feel for the kinds of things Shell can do!
+    </p>
 
   </body>
 </html>
