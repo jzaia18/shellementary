@@ -6,5 +6,44 @@
   <body>
     <h1>Welcome to Shellementary!</h1>
     <i><h4>...A get-started guide on how to code in Shell</h4></i>
+    <br><br>
+    <h3>And Now for Your First Shellscript!</h3>
+    <hr>
+    <p>
+      As is customary with learning any new language, this walkthrough will take you through the process of writing and running your very first Shellscript as a "Hello World!" program. Then we'll progress into some more basics of Shell! Okay? Okay! :)
+    </p>
+    <p>
+      <br>
+      To start off, any Shell code must begin with the following line:
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+    </code></pre>
+
+    <p>
+      This is to indicate to your computer that when you run this file as an executable, the program that will be used to run your code will be bash, whose path you just provided.
+    </p>
+    <p>
+      So every Shell file you ever write will pretty much follow this format:
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+	# A BUNCH OF TERMINAL COMMANDS
+    </code></pre>
+
+    <p>
+      At heart, that's essentially all that it is! You feed bash a bunch of stuff to do, and then it does it! You can have your commands be anything, including, ls, cd, mv, rm, cp, mkdir, touch, or git commit -m "This commit doesn't work." But to start, we will use echo.
+    </p>
+    <p>
+      Echo does what you think it does. You give it an argument, and bash reads it back to you. While it seems useless using it directly in the terminal, echo is essentially the print statment of Shell. So to write a "Hello World" program, it's quite simple!
+    </p>
+
+    <pre><code>
+	#! /bin/bash
+	echo "Hello World!"
+    </code></pre>
+
   </body>
 </html>
