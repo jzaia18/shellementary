@@ -1,175 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="static/css/asciinema-player.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Shellementary!</title>
   </head>
   <body>
     <div class="top" id="top">
-    <h1>Welcome to Shellementary!</h1>
-    <i><h4>A get-started guide on how to code in Shell <br>
-	by Mansour Elsharawy, Adeebur Rahman, & Jake Zaia</h4></i>
-    <hr>
+      <h1>Welcome to Shellementary!</h1>
+      <h4 style="font-style: italic;">A get-started guide on how to code in Shell <br>
+	      by Mansour Elsharawy, Adeebur Rahman, &amp; Jake Zaia</h4>
+      <hr>
     </div>
     <div class="content">
-    <br>
-    <h3>What is a Shell?</h3>
-    <hr>
-    <p>
-      A shell is a User Interface (UI) that allows users to interact with their computer with few layers of abstraction (almost directly to the OS). The shell that we are most familiar with, and is one of the most popular is called BASH (Bourne Again SHell). Another example is the Windows Command Prompt. Generally shells are text based in order to prevent unneeded features slowing down processes.
-    </p>
-    <img class="logo" src="https://camo.githubusercontent.com/7c9b27101ba491969d016f2f2427c3e066f7bd0b/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d61737465722f6173736574732f4c6f676f732f4964656e746974792f504e472f424153485f6c6f676f2d7472616e73706172656e742d62672d636f6c6f722e706e67" alt="BASH Logo" />
-    <img class="logo" src="https://trickpit.files.wordpress.com/2017/03/how-to-create-a-simple-windows-batch-file-486103-2.jpg?w=790" alt="Windows CMD Logo" />
-
-
-    <h3>What is a shell script? (And why should anyone care about them?)</h3>
-    <hr>
-    <p>
-      A shell script is any program designed to be run directly by a shell. They are easy to write, run without the need for an additional compiler or interpreter and can drastically increase the functionality of your shell. They are most useful because they require no additional software, and with a little effort to learn, you can save a great deal of time doing simple tasks in the future (think how much time keyboard shortcuts save). Also they make you look like a terminal pro!
-    </p>
-
-    <img class="logo" src="http://i0.kym-cdn.com/entries/icons/original/000/021/807/4d7.png" alt="Hackerman" />
-
-    <h3>And Now for Your First Shellscript!</h3>
-    <hr>
-    <p>
-      As is customary with learning any new language, this walkthrough will take you through the process of writing and running your very first Shellscript as a "Hello World!" program. Then we'll progress into some more basics of Shell! Okay? Okay! :)
-    </p>
-    <p>
       <br>
-      To start off, any Shell code must begin with the following line:
-    </p>
+      <h3>What is a Shell?</h3>
+      <hr>
+      <p>
+        A shell is a User Interface (UI) that allows users to interact with their computer with few layers of abstraction (almost directly to the OS). The shell that we are most familiar with, and is one of the most popular is called BASH (Bourne Again SHell). Another example is the Windows Command Prompt. Generally shells are text based in order to prevent unneeded features slowing down processes.
+      </p>
+      <img class="logo" src="https://camo.githubusercontent.com/7c9b27101ba491969d016f2f2427c3e066f7bd0b/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d61737465722f6173736574732f4c6f676f732f4964656e746974792f504e472f424153485f6c6f676f2d7472616e73706172656e742d62672d636f6c6f722e706e67" alt="BASH Logo" />
+      <img class="logo" src="https://trickpit.files.wordpress.com/2017/03/how-to-create-a-simple-windows-batch-file-486103-2.jpg?w=790" alt="Windows CMD Logo" />
 
-    <pre><code>
+
+      <h3>What is a shell script? (And why should anyone care about them?)</h3>
+      <hr>
+      <p>
+        A shell script is any program designed to be run directly by a shell. They are easy to write, run without the need for an additional compiler or interpreter and can drastically increase the functionality of your shell. They are most useful because they require no additional software, and with a little effort to learn, you can save a great deal of time doing simple tasks in the future (think how much time keyboard shortcuts save). Also they make you look like a terminal pro!
+      </p>
+
+      <img class="logo" src="http://i0.kym-cdn.com/entries/icons/original/000/021/807/4d7.png" alt="Hackerman" />
+
+      <h3>And Now for Your First Shellscript!</h3>
+      <hr>
+      <p>
+        As is customary with learning any new language, this walkthrough will take you through the process of writing and running your very first Shellscript as a "Hello World!" program. Then we'll progress into some more basics of Shell! Okay? Okay! :)
+      </p>
+      <p>
+        <br>
+        To start off, any Shell code must begin with the following line:
+      </p>
+
+      <pre><code>
 	#! /bin/bash
-    </code></pre>
+      </code></pre>
 
-    <p>
-      This is to indicate to your computer that when you run this file as an executable, the program that will be used to run your code will be bash, whose path you just provided.
-    </p>
-    <p>
-      So every Shell file you ever write will pretty much follow this format:
-    </p>
+      <p>
+        This is to indicate to your computer that when you run this file as an executable, the program that will be used to run your code will be bash, whose path you just provided.
+      </p>
+      <p>
+        So every Shell file you ever write will pretty much follow this format:
+      </p>
 
-    <pre><code>
+      <pre><code>
 	#! /bin/bash
 	# A BUNCH OF TERMINAL COMMANDS
-    </code></pre>
+      </code></pre>
 
-    <p>
-      At heart, that's essentially all that it is! You feed bash a bunch of stuff to do, and then it does it! You can have your commands be anything, including ls, cd, mv, rm, cp, mkdir, touch, or git commit -m "This commit doesn't work." But to start, we will use echo.
-    </p>
-    <p>
-      Echo does what you think it does. You give it an argument, and bash reads it back to you. While it seems useless using it directly in the terminal, echo is essentially the print statment of Shell. So to write a "Hello World" program, it's quite simple!
-    </p>
+      <p>
+        At heart, that's essentially all that it is! You feed bash a bunch of stuff to do, and then it does it! You can have your commands be anything, including ls, cd, mv, rm, cp, mkdir, touch, or git commit -m "This commit doesn't work." But to start, we will use echo.
+      </p>
+      <p>
+        Echo does what you think it does. You give it an argument, and bash reads it back to you. While it seems useless using it directly in the terminal, echo is essentially the print statment of Shell. So to write a "Hello World" program, it's quite simple!
+      </p>
 
-    <pre><code>
+      <pre><code>
 	#! /bin/bash
 	echo "Hello World!"
-    </code></pre>
+      </code></pre>
 
-    <p>
-      Note that we used echo "Hello World!" instead of echo Hello World!, even though both of those would "work." However, it's best to stick with the quotes in order to make sure you're giving one argument instead of multiple. More on this later.
-    </p>
+      <p>
+        Note that we used echo "Hello World!" instead of echo Hello World!, even though both of those would "work." However, it's best to stick with the quotes in order to make sure you're giving one argument instead of multiple. More on this later.
+      </p>
 
-    <p>
-    So let's run this file! Simply go into the terminal and run your file as an executable like so (for the sake of example we called our file script.sh):  
-    </p>
+      <p>
+        So let's run this file! Simply go into the terminal and run your file as an executable like so (for the sake of example we called our file script.sh):
+      </p>
 
-    <pre><code>
+      <pre><code>
 	$ ./script.sh
-    </code></pre>
-    
-    <p>
-      ...and permission's been denied. That's because you haven't given the file execute permissions, which can be done by doing:
-    </p>
+      </code></pre>
 
-    <pre><code>
+      <p>
+        ...and permission's been denied. That's because you haven't given the file execute permissions, which can be done by doing:
+      </p>
+
+      <pre><code>
 	$ chmod +x script.sh
-    </code></pre>
+      </code></pre>
 
-    <p>
-      Try running the file again, and it works! But let's personalize this a tad, eh? How about we asked the user for their name, read it, and then greeted them personally? To do this we need to use variables and the read function. First we'll ask the user for their name by printing our query:
-    </p>
+      <p>
+        Try running the file again, and it works! The following is a video of our progress so far. Tip: You can select text in the videos.
+      </p>
 
-    <pre><code>
+      <asciinema-player src="static/casts/basic.cast" preload="true"></asciinema-player>
+
+      <p>
+        But let's personalize this a tad, eh? How about we asked the user for their name, read it, and then greeted them personally? To do this we need to use variables and the read function. First we'll ask the user for their name by printing our query:
+      </p>
+
+      <pre><code>
 	#! /bin/bash
 	echo "What is your name?"
-    </code></pre>
+      </code></pre>
 
-    <p>
-      Then we have to ask them for input and save it somewhere. This is where read comes in. To do this we'll create a variable and "read" the user's input into it, like so:
-    </p>
+      <p>
+        Then we have to ask them for input and save it somewhere. This is where read comes in. To do this we'll create a variable and "read" the user's input into it, like so:
+      </p>
 
-    <pre><code>
+      <pre><code>
 	#! /bin/bash
 	echo "What is your name?"
 	read NAME
-    </code></pre>
+      </code></pre>
 
-    <p>
-      What this does is it blocks the rest of the script until the user enters some data, then saves that data into a variable that we just created called NAME. Fantastic! Now in order to refer to NAME when greeting them, we simply do:
-    </p>
+      <p>
+        What this does is it blocks the rest of the script until the user enters some data, then saves that data into a variable that we just created called NAME. Fantastic! Now in order to refer to NAME when greeting them, we simply do:
+      </p>
 
-    <pre><code>
+      <pre><code>
 	#! /bin/bash
 	echo "What is your name?"
 	read NAME
 	echo "Hello $NAME!"
-    </code></pre>
+      </code></pre>
 
-    <p>
-      To refer to variables we simply add a $ in front of their name, and their value is inserted in its place to be used. Run this code and watch the magic happen! 
-    </p>
+      <p>
+        To refer to variables we simply add a $ in front of their name, and their value is inserted in its place to be used. Run this code and watch the magic happen!
+      </p>
 
-    <p>
-      Now for something a little more advanced. Let's create a file with the name of the user! So for starters, let's add this to our code:
-    </p>
+      <asciinema-player src="static/casts/custom.cast" preload="true"></asciinema-player>
 
-    <pre><code>
-	echo "Creating file with your name..."
+      <p>
+        Now for something a little more advanced. Let's create a file with the name of the user! So for starters, let's add this to our code:
+      </p>
+
+      <pre><code>
+	echo "Creating a file with your name..."
 	touch $NAME_file.txt
-    </code></pre>
+      </code></pre>
 
-    <p>
-      This should create a file with the user's name. So for example, if the user were to input "Bob" the file created should be called Bob_file.txt. Except running this doesn't seem to create such a file... And the reason for that is that bash doesn't know where your variable name ends and the rest of the filename begins, so it looked for a variable called $NAME_file, which has no value in it, so nothing was created. To fix this, we can denote our variable names with curly braces.
-    </p>
+      <p>
+        This should create a file with the user's name. So for example, if the user were to input "Bob" the file created should be called Bob_file.txt. According to ls, no file is created... And the reason for that is that bash doesn't know where your variable name ends and the rest of the filename begins, so it looked for a variable called $NAME_file, which has no value in it, so the shell executed the command "touch .txt" and the file ".txt" was created. Using ls on it's own wouldn't show dotfiles and when using "ls -al", you can confirm ".txt". is created. To fix this, we can denote our variable names with curly braces.
+      </p>
 
-    <pre><code>
+      <pre><code>
 	echo "Creating file with your name..."
 	touch ${NAME}_file.txt
-    </code></pre>
+      </code></pre>
 
-    <p>
-      And running this with simple inputs should work! But what if the user types in something like "John Doe" where a space is involved? Run it and see! What you get is one file named "John" and one named "Doe_file.txt." Why does this happen?
-    </p>
+      <p>
+        And running this with simple inputs should work! But what if the user types in something like "John Doe" where a space is involved? Run it and see! What you get is one file named "John" and one named "Doe_file.txt." Why does this happen?
+      </p>
 
-    <p>
-      The answer lies in the way the values are substituted. The way we have it right now results in the following substitution:
-    </p>
+      <p>
+        The answer lies in the way the values are substituted. The way we have it right now results in the following substitution:
+      </p>
 
-    <pre><code>
+      <pre><code>
 	echo "Creating file with your name..."
 	touch John Doe_file.txt
-    </code></pre>
+      </code></pre>
 
-    <p>
-      This is read as two arguments! What we've done is tell bash "Okay, make a file called Joe, and make another called Doe_file.txt as we have denoted with the space." In order to make this one argument and not two, we just have to put the whole thing in quotes, hence why we said it's better to stay in the habit to avoid multiple argument quirks like we just demonstrated.
-    </p>
+      <p>
+        This is read as two arguments! What we've done is tell bash "Okay, make a file called Joe, and make another called Doe_file.txt as we have denoted with the space." In order to make this one argument and not two, we just have to put the whole thing in quotes, hence why we said it's better to stay in the habit to avoid multiple argument quirks like we just demonstrated.
+      </p>
 
-    <pre><code>
+      <pre><code>
 	echo "Creating file with your name..."
 	touch "${NAME}_file.txt"
-    </code></pre>
+      </code></pre>
 
-    <p>
-...And that's all for now! We've just barely scratched the surface of Shell, (we haven't even gotten into loops and if statements yet!) but there are plenty of online resources to sink your teeth into! We hope this was a good way to get a feel for the kinds of things Shell can do!
-    </p>
-    
-    <div class="footer">
-      <a href="#top">Back to Top</a>
+      <asciinema-player src="static/casts/advanced.cast" preload="true"></asciinema-player>
+
+      <p>
+        ...And that's all for now! We've just barely scratched the surface of Shell, (we haven't even gotten into loops and if statements yet!) but there are plenty of online resources to sink your teeth into! We hope this was a good way to get a feel for the kinds of things Shell can do!
+      </p>
+
+      <div class="footer">
+        <a href="#top">Back to Top</a>
+      </div>
     </div>
-    </div>
+    <script src="static/js/asciinema-player.js"></script>
   </body>
 </html>
