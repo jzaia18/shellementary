@@ -10,7 +10,7 @@
   <body>
     <div class="top" id="top">
       <h1>Welcome to Shellementary!</h1>
-      <h4 style="font-style: italic;">A get-started guide on how to code in Shell <br>
+      <h4 style="font-style: italic;">A get-started guide on Shell Scripting<br>
 	      by Mansour Elsharawy, Adeebur Rahman, &amp; Jake Zaia</h4>
       <hr>
     </div>
@@ -176,7 +176,53 @@
       <asciinema-player src="static/casts/advanced.cast" preload="true"></asciinema-player>
 
       <p>
-        ...And that's all for now! We've just barely scratched the surface of Shell, (we haven't even gotten into loops and if statements yet!) but there are plenty of online resources to sink your teeth into! We hope this was a good way to get a feel for the kinds of things Shell can do!
+        Aside from basic shell scripts like these, we have all probably interacted with something similar in the past. As you have already learned shell scripts are primarily interpreted by bash. When starting up, bash loads in a file named ".bashrc" and this is basically a giant shell script. In this file are commands that you would want to run on startup, for example you might want to print out the date or a fortune. However adding too much might clutter up your file and make it hard. This is way many opt to separate their files into separate categories. The default .bashrc on ubuntu machines for example sources the file ".bash_aliases" from your home directory, with a comment suggesting you include your aliases in it. Bash aliases are basically just an abbreviation for really long commands that you might not what to have to type out all the time.
+      </p>
+
+      <pre><code>
+	alias ls='ls --color=always'
+	alias ll='ls -alF'
+      </code></pre>
+
+      <p>
+        However, we find it to be more clear and concise to further separate the .bashrc file. We recommend that you create three files in addition to the default ".bashrc" file. The files are .bash_aliases, .bash_exports, and .bash_functions. In .bash_exports you would include any exports statements you might want to have and in .bash_functions you would include all of your bash functions. Now what exactly is a bash function. A bash function is basically the same exact thing as a bash script. There are two ways you can define a bash function.
+      </p>
+
+      <pre><code>
+	&lt;function name&gt;() {
+	    # insert shell commands here
+	}
+	# or
+	function &lt;name&gt; {
+	    # insert shell commands here
+	}
+      </code></pre>
+
+      <p>
+        We have compiled a couple of basic bash files with some simple aliases and examples of bash functions. They are commented up and available to download. We also have the three stages of the step by step script we created earlier on this page.
+      </p>
+
+      <p>
+        Download Example Code
+        <br>
+        <a href="example/script0.sh">Hello World</a>
+        <br>
+        <a href="example/script1.sh">Custom Hello</a>
+        <br>
+        <a href="example/script2.sh">Name File Creator</a>
+        <br>
+        <a href="example/.bashrc">.bashrc</a>
+        <br>
+        <a href="example/.bash_aliases">.bash_aliases</a>
+        <br>
+        <a href="example/.bash_exports">.bash_exports</a>
+        <br>
+        <a href="example/.bash_functions">.bash_functions</a>
+        <br>
+      </p>
+
+      <p>
+        ...And that's all for now! We've just barely scratched the surface of Shell, there are plenty of online resources to sink your teeth into! We hope this was a good way to get a feel for the kinds of things Shell can do!
       </p>
 
       <div class="footer">
